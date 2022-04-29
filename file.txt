@@ -1,0 +1,24 @@
+Use nltk.download() (nltk downloader) to download 'book' dataset
+TO import all book-related dataset:
+from nltk.book import * => from text1 thru text9 will be available 
+
+Methods to use:
+1. concordance('nanny'),
+2. similar('nanny'),
+3. common_contexts(['so','very]),
+##  => below method require matplotlib and numpy to be installed first
+4. text4.dispersion_plot(['America','freedom','duties'])
+5. generate() : nothing in the parentheses.(the text is random, it reuses common words and phrases from the source text
+and gives us a sense of its style and content. ()
+6. len(text2) for tokens length, sorted(set(text2)) for all distinct word types (including puncturations)
+     however, if the text is not from .book module, the set() and FreqDist() method params needs to include text.split(), otherwise, it will
+     only show individual letter as the word type, not words themselves.
+7. FreqDist(text) for frequency distribution of word types in the text, it is a dictionary
+8.FreqDist(text).hapaxes for word only show once in 
+9. bigrams(['big','how','well','see']) => generator object bigrams ,use list() to wrap for the result [('big', 'how'), ('how', 'well'),('well', 'see')]
+10 collocations are frequent bigrams, so resistant to subs with words of  similar senses, e.g. red wine is collcation, good wine is a bigram
+    text4.collacations() do the trick =>United States; fellow citizens; years ago; four years; Federal Government; General Government; American people;...
+    as it shows, collocations are very specific to the genre of the text.
+11. To derive the vocabulary, collapsing case distinctions and ignoring punctuation,
+we can write set([w.lower() for w in text if w.isalpha()])
+12. for Chapter 1 summary: page 55
